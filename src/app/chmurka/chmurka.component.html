@@ -1,0 +1,8 @@
+<div (click)="click()"
+    [ngClass]="{down: down, hide: isClick}"
+    [ngStyle]="{'transition':(speed+'ms top'), 'left':(left+'%')}">
+    <i [ngClass]="{fa:true, 'fa-star':true, pozycja:true, hide: addScore != 2}">
+    </i>
+    <i>{{addScore}}</i>
+  <img src="/assets/chmura.png" alt="" />
+</div>
