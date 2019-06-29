@@ -1,8 +1,15 @@
 <div (click)="click()"
     [ngClass]="{down: down, hide: isClick}"
     [ngStyle]="{'transition':(speed+'ms top'), 'left':(left+'%')}">
-    <i [ngClass]="{fa:true, 'fa-star':true, pozycja:true, hide: addScore != 2}">
-    </i>
-    <i>{{addScore}}</i>
-  <img src="/assets/chmura.png" alt="" />
+    <p class="p1" [ngClass]="{ hide: addScore != -1}">{{addScore}}</p>
+    <p class="p2" [ngClass]="{ hide: addScore != 1 }">{{addScore}}</p>
+    <p class="p2" [ngClass]="{ hide: addScore != 2 }">{{addScore}}</p>
+    <p class="p2" [ngClass]="{ hide: addScore != 0 }">{{addScore}}</p>
+
+    <img src="/assets/chmura4(1).png" [ngClass]="{ hide: addScore != 2}" />
+    <img src="/assets/chmura.png" [ngClass]="{ hide: addScore != 1}" />
+    <img src="/assets/chmura2(1).png" [ngClass]="{ hide: addScore != 0}" />
+    <img src="/assets/chmura3(1).png" [ngClass]="{ hide: addScore != -1}" />
+   
+  
 </div>

@@ -8,6 +8,7 @@ import { EngineService } from '../engine.service';
 })
 export class StartGryComponent implements OnInit {
   czyNieGramy = false;
+  nickname = ""; 
 
   constructor(private engine: EngineService) { 
 
@@ -18,11 +19,15 @@ export class StartGryComponent implements OnInit {
   }
 
   startGry() {
-    this.engine.startGry();
+    
     console.log('----start gry------');
+
+    this.engine.startGry(this.nickname);
   }
 
   ngOnInit() {
   }
+
+
 
 }

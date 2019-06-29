@@ -26,6 +26,8 @@ export class ChmurkaComponent implements OnInit {
     this._es.Click(this);
   }
 
+
+
   ngOnInit() {
     this.speed = Math.floor(Math.random() * 7000) + 7000;
     this.left = Math.floor(Math.random() * 4) * 25;

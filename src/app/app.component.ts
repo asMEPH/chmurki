@@ -14,6 +14,7 @@ export class AppComponent {
 
   x = 0;
   czyNieGramy = false;
+  koniecGry = false;
 
   constructor(private engine: EngineService) {
 
@@ -22,12 +23,26 @@ export class AppComponent {
     //this.czyNieGramy = !e;
     //});
 
+    this.engine.endGame.asObservable().subscribe( e => {
+      if(e !== false)
+      {
+      this.koniecGry = true;
+
+      } else {
+        this.koniecGry = false;
+      
+      }
+
+
+    });
+
     setInterval((ts) => {
       if(this.engine.czyGramy){
 
       
       this.element.push(new Date());
       let dx = new Date().setSeconds(-20);
+      this.engine.czasGryWylicz();
       this.element = this.element.filter(e => e > dx );
       }
 
